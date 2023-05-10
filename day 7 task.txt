@@ -1,0 +1,107 @@
+1.
+Get all the countries from the Asia continent /region using the Filter function
+
+
+
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v3.1/all");
+request.send();
+request.onload=function(){
+var result= JSON.parse(request.response);
+console.log(result);
+}
+var r = result.filter((e)=>{
+if(e.length>0){
+for(i=0;i<result.length;i++)
+{
+if(region==Asia)
+console.log(population);
+}
+}});
+   
+
+2.
+Get all the countries with a population of less than 2 lakhs using Filter function
+
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v3.1/all");
+request.send();
+request.onload=function(){
+var result= JSON.parse(request.response);
+console.log(result);
+}
+total=[];
+var r = result.filter((e)=>{
+if(e.length>0){
+for(i=0;i<result.length;i++)
+{
+if(population<200000)
+{
+return(region,population);
+console.log(total);
+}
+}});
+
+
+3. Print the following details name, capital, flag using forEach function
+
+
+
+var request = new XMLHttpRequest();
+
+request.open("GET", "https://restcountries.com/v3.1/all")
+request.send();
+request.onload = function () {
+    var data = JSON.parse(this.responseText);
+    printData(data);
+}
+
+
+
+function printData(data) {
+    if(data.length > 0) {
+       for(let i= 0; i < data.length; i++) {
+           const { name = {}, capital={}, flag='' }  = data[i];
+           console.log(name.common,capital, flag);
+       }
+    }
+}
+
+4.Print the total population of countries using reduce function
+
+
+var request = new XMLHttpRequest();
+
+request.open("GET", "https://restcountries.com/v3.1/all")
+request.send();
+request.onload = function () {
+    var data = JSON.parse(this.responseText);
+   
+}
+var r = data.reduce((e,i)=>e+i);
+console.log(e);
+5.Print the country which uses US Dollars as currency.
+
+
+
+
+var request = new XMLHttpRequest();
+
+request.open("GET", "https://restcountries.com/v3.1/all")
+request.send();
+request.onload = function () {
+    var data = JSON.parse(this.responseText);
+    printData(data);
+}
+
+
+
+function printData(data) {
+    if(data.length > 0) {
+       for(let i= 0; i < data.length; i++) {
+           const { name = {}, capital={}}  = data[i];
+           console.log(name.common,capital);
+       }
+    }
+}
+
